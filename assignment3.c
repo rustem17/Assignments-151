@@ -34,12 +34,13 @@ int isPalindrome (char str[]) {
 		//We are going through only half of the word, even if the length of string is odd						
 		//Because if length is odd, the division of two will give us only the celoe chislo without ostatok
 		if (j <= n / 2)					
-			//If the j iterator will be suddenly at the first half of string, we should break the function;\
 			break;
-
+		//If the j iterator will be suddenly at the first half of string, we should break the function;
+			
 		if (str[i] != str[j])					
-			//If any of chars is not equals on both sides, it is not palindrome
 			return 0;
+		//If any of chars is not equals on both sides, it is not palindrome
+		
 		j--;
 	}
 	return 1;
