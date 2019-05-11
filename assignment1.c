@@ -4,40 +4,33 @@
 #include <math.h>
 
 int main(void) {
-	
 	printf("WELCOME to the guessing game!\n");
 	
 	int max = 9999;
 	char l1;		
-	
 	int count_values = 0;
         int count_num = 0;
 	
 	while (1) {
 		printf("MENU: (s) to start a game, (n) to set a new range, or (q) to quit: \n");
-
 	        scanf(" %c", &l1);
-		
 		int secret;
 		secret = rand() % max;
-		
+
 		if (l1 == 's') {
 			printf("The secret number is BETWEEN 0 AND %i. Guess: \n", max);
-			
 			int guess;
 			int count = 0;
 
 			while(scanf("%i", &guess)) {
-				count++;	
-
+				count++;
 				if (guess == secret) {
 					printf("Correct: You TOOK %i guesses!\n", count);
 					break;
-				} else if (guess < secret) {
+				} else if (guess < secret)
 					printf("Too LOW! Guess: \n");
-				} else if (guess > secret) {
+				else if (guess > secret)
 					printf("Too HIGH! Guess: \n");
-				}
 				
 			}
 			count_values += count;
@@ -49,9 +42,8 @@ int main(void) {
 			if (count_num != 0) {
 				float average = count_values / count_num;
 				printf("Thanks for playing. Your guess count AVERAGE %0.2f\n", average);
-			} else {
+			} else
 				printf("Thanks for playing. Your guess count AVERAGE 0.0\n");
-			}
 			return 0;
 		} else {
 			printf("UNRECOGNIZED command.\n");
